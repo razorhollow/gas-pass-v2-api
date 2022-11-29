@@ -4,7 +4,9 @@ const Schema = mongoose.Schema
 
 const profileSchema = new Schema({
   name: String,
-  photo: String
+  currentBalance: {type: Schema.Types.ObjectId, ref: 'Balance'},
+  isAdmin: {type: Boolean, default: true},
+  isActive: {type: Boolean, default: true},
 },{
   timestamps: true,
 })
